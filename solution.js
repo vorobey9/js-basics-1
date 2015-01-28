@@ -1,6 +1,14 @@
 function squaresOfMax(a, b, c) {
   // Write a function that takes three numbers and returns
   // sum of squares of two largest
+    if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+        if ((a <= b) && (a <= c))
+            return (b * b + c * c);
+        if ((b <= a) && (b <= c))
+            return (a * a + c * c);
+        if ((c <= a) && (c <= b))
+            return (a * a + b * b);
+    }
 }
 
 function drawTriangle() {
@@ -13,6 +21,13 @@ function drawTriangle() {
   // #####
   // ######
   // #######
+    var symbol = "#";
+    var i = 0;
+    while (i < 7) {
+        console.log(symbol);
+        symbol = symbol + "#";
+        i++;
+    }
 }
 
 function fizzBuzz() {
@@ -23,6 +38,19 @@ function fizzBuzz() {
   // When you have that working, modify your program to print "FizzBuzz",
   // for numbers that are divisible by both 3 and 5 (and still print "Fizz"
   // or "Buzz" for numbers divisible by only one of those).
+    for (var i = 1; i <= 100; i++) {
+        if(i%3 == 0 && i%5 == 0 ) {
+            console.log("FizzBuzz");
+        } else 
+            if(i%3 == 0) {
+            console.log("Fizz");
+        } else 
+            if(i%5 == 0) {
+            console.log("Buzz");
+        } else {
+            console.log(i);
+        }
+    }
 }
 
 function chessBoard(size) {
@@ -45,6 +73,23 @@ function chessBoard(size) {
   // When you have a program that generates this pattern,
   // define a variable size = 8 and change the program so that
   // it works for any size, outputting a grid of the given width and height.
+    var i = 1;
+    var j = 1;
+    var line = "";
+    for ( ; i <= size; i++) {
+        for ( ; j <= size; j++) {
+            if(j%2 == 0)
+                line = line + "#";
+            else
+                line = line + " ";
+        }
+        console.log(line);
+        if(i%2 == 0)
+            j = 2;
+        else
+            j = 1;
+        line = "";
+    }
 }
 
 module.exports.squaresOfMax = squaresOfMax;
