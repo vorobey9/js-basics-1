@@ -76,6 +76,8 @@ function chessBoard(size) {
     var i = 1;
     var j = 1;
     var line = "";
+    //
+    var result = "";
     for ( ; i <= size; i++) {
         for ( ; j <= size; j++) {
             if(j%2 == 0)
@@ -83,13 +85,14 @@ function chessBoard(size) {
             else
                 line = line + " ";
         }
-        console.log(line);
+        result += line + '\n';
         if(i%2 == 0)
             j = 2;
         else
             j = 1;
         line = "";
     }
+    return result;
 }
 
 module.exports.squaresOfMax = squaresOfMax;
