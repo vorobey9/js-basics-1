@@ -90,9 +90,9 @@ function chessBoard(size) {
             result += line;
         }
         if(i%2 == 0)
-            j = 2;
-        else
             j = 1;
+        else
+            j = 2;
         line = "";
     }
     return result;
