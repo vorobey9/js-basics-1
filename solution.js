@@ -73,29 +73,17 @@ function chessBoard(size) {
   // When you have a program that generates this pattern,
   // define a variable size = 8 and change the program so that
   // it works for any size, outputting a grid of the given width and height.
-    var i = 1;
-    var j = 1;
-    var line = "";
-    var result = "";
-    for ( ; i <= size; i++) {
-        for ( ; j <= size; j++) {
-            if(j%2 == 0)
-                line = line + "#";
-            else
-                line = line + " ";
+    var res = "";
+    for(var i= 1, x = 1; i <= size; i++) {
+        for(var j= 1; j <= size; j++) {
+            (x%2 == 0) ? res += "#" : res += " ";
+            (x == 1) ? x = 2 : x = 1;
         }
-        if(i!=size) {
-            result += line + '\n';
-        } else {
-            result += line;
-        }
-        if(i%2 == 0)
-            j = 1;
-        else
-            j = 2;
-        line = "";
+            (x == 1) ? x = 2 : x = 1;
+            if(i != size)
+                res += "\n";
     }
-    return result;
+    return res;
 }
 
 module.exports.squaresOfMax = squaresOfMax;
